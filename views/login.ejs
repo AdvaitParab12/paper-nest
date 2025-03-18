@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E28886</title>
-    <link rel="stylesheet" href="/style.css" />
-  </head>
+  <%- include('includes/head') %>
   <body>
-    <header>
-      <h1>E28886.tech</h1>
-      <a href="/">Home</a>
-      <a href="/login">Login</a>
-    </header>
+    <%- include('includes/header') %>
 
     <main>
-      <form action="#">
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" required />
+      <% if(errors.length > 0) { %>
+      <p><mark style="background: tomato">Errors</mark></p>
+      <ul>
+        <% errors.forEach((error) => { %>
+        <li><%= error %></li>
+        <% }) %>
+      </ul>
+      <% } %>
 
-        <br />
+      <form action="login" method="POST">
+        <fieldset>
+          <legend>Log In</legend>
 
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required />
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            autocomplete="off"
+            required
+          />
+          <br />
 
-        <br />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            autocomplete="off"
+            required
+          />
+          <br />
 
-        <button type="submit">Create</button>
+          <button type="submit">Log In</button>
+        </fieldset>
       </form>
     </main>
+
+    <%- include('includes/footer') %>
   </body>
 </html>

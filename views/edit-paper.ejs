@@ -4,11 +4,7 @@
   <body>
     <%- include('includes/header') %>
 
-
     <main>
-      <h1>Welcome to e28886</h1>
-      <p>Create a new account to release research papers.</p>
-
       <% if(errors.length > 0) { %>
       <p><mark style="background: tomato">Errors</mark></p>
       <ul>
@@ -18,31 +14,37 @@
       </ul>
       <% } %>
 
-      <form action="/register" method="POST">
+      <form action="/edit-paper/<%= paper.id %>" method="POST">
         <fieldset>
-          <legend>Sign Up</legend>
+          <legend>Edit Exisiting Paper</legend>
 
-          <label for="username">Username</label>
+          <label for="title">Title</label>
+          <br />
           <input
-            name="username"
             type="text"
-            id="username"
+            id="title"
+            name="title"
             autocomplete="off"
+            value="<%= paper.title %>"
             required
           />
           <br />
 
-          <label for="password">Password</label>
-          <input
-            name="password"
-            type="password"
-            id="password"
+          <label for="body">Body</label>
+          <br />
+          <textarea
+            name="body"
+            id="body"
             autocomplete="off"
+            class="editor"
             required
-          />
+          >
+<%= paper.body %></textarea
+          >
+
           <br />
 
-          <button type="submit">Sign Up</button>
+          <button type="submit">Save Changes</button>
         </fieldset>
       </form>
     </main>

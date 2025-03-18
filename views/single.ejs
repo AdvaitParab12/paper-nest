@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+  <%- include('includes/main-head', {title: paper.title}) %>
+
+  <body>
+    <!-- /.site-preloader -->
+    <%- include('includes/site-preloader') %>
+
+    <!-- TODO: Add this in ejs includes -->
+    <%- include('includes/main-header') %>
+
+    <!--/.main-header-->
+
+    <%- include('includes/popup-search-box') %>
+    <!--/.popup-search-box-->
+
+    <div id="searchbox-overlay"></div>
+    <!--/.searchbox-overlay-->
+
+    <!-- 
+        MARK: Content
+    -->
+    <section class="single-page no-sidebar">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="single-post-thumb">
+              <img src="/assets/img/post-2.jpg" alt="thumb" />
+            </div>
+            <header class="entry-header">
+              <ul class="post-meta">
+                <li><%= paper.username %></li>
+                <li class="sep"></li>
+                <li
+                  ><a href="category.html" class="date"
+                    ><%= new Date(paper.createdDate).getDate() %>&#8725;<%= new
+                    Date(paper.createdDate).toLocaleString('default', { month:
+                    'long' }); %>&#8725;<%= new
+                    Date(paper.createdDate).getFullYear() %></a
+                  ></li
+                >
+              </ul>
+            </header>
+            <div class="single-post-content">
+              <%- formatHTML(paper.body) %>
+            </div>
+
+            <!-- TODO: Show recent research papers -->
+            <div class="single-post-item">
+              <h3>Recent Research Papers</h3>
+              <div class="related-post-wrap">
+                <article>
+                  <div class="post-card horizontal-card img-hover-move">
+                    <div class="post-thumb media">
+                      <a href="single.html">
+                        <img src="/assets/img/post-1.jpg" alt="thumb" />
+                      </a>
+                    </div>
+                    <div class="post-content">
+                      <ul class="post-meta">
+                        <li><a href="category.html">Lifestyle</a></li>
+                        <li class="sep"></li>
+                        <li>
+                          <a href="category.html" class="date">05.07.2024</a>
+                        </li>
+                      </ul>
+                      <h3>
+                        <a href="single.html" class="text-hover"
+                          >In this Austrian town, extreme popular</a
+                        >
+                      </h3>
+                      <ul class="post-card-footer">
+                        <li>
+                          <a href="single.html" class="read-more"
+                            >Continue Reading</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="comment">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              height="24"
+                              viewBox="0 -960 960 960"
+                              width="24"
+                              fill="currentColor"
+                            >
+                              <path
+                                d="M250.001-410.001h459.998v-59.998H250.001v59.998Zm0-120h459.998v-59.998H250.001v59.998Zm0-120h459.998v-59.998H250.001v59.998Zm609.998 531.537L718.461-260.001H172.309q-30.308 0-51.308-21t-21-51.308v-455.382q0-30.308 21-51.308t51.308-21h615.382q30.308 0 51.308 21t21 51.308v669.227ZM172.309-320h571.69L800-264.615v-523.076q0-4.616-3.846-8.463-3.847-3.846-8.463-3.846H172.309q-4.616 0-8.463 3.846-3.846 3.847-3.846 8.463v455.382q0 4.616 3.846 8.463 3.847 3.846 8.463 3.846ZM160-320V-800v480Z"
+                              /></svg
+                            ><span>04</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+                <article>
+                  <div class="post-card horizontal-card img-hover-move">
+                    <div class="post-thumb media">
+                      <a href="single.html">
+                        <img src="/assets/img/post-2.jpg" alt="thumb" />
+                      </a>
+                    </div>
+                    <div class="post-content">
+                      <ul class="post-meta">
+                        <li><a href="category.html">Sports</a></li>
+                        <li class="sep"></li>
+                        <li>
+                          <a href="category.html" class="date">01.09.2024</a>
+                        </li>
+                      </ul>
+                      <h3>
+                        <a href="single.html" class="text-hover"
+                          >Mexico's controversial new $28.5bn tourist</a
+                        >
+                      </h3>
+                      <ul class="post-card-footer">
+                        <li>
+                          <a href="single.html" class="read-more"
+                            >Continue Reading</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="comment">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              height="24"
+                              viewBox="0 -960 960 960"
+                              width="24"
+                              fill="currentColor"
+                            >
+                              <path
+                                d="M250.001-410.001h459.998v-59.998H250.001v59.998Zm0-120h459.998v-59.998H250.001v59.998Zm0-120h459.998v-59.998H250.001v59.998Zm609.998 531.537L718.461-260.001H172.309q-30.308 0-51.308-21t-21-51.308v-455.382q0-30.308 21-51.308t51.308-21h615.382q30.308 0 51.308 21t21 51.308v669.227ZM172.309-320h571.69L800-264.615v-523.076q0-4.616-3.846-8.463-3.847-3.846-8.463-3.846H172.309q-4.616 0-8.463 3.846-3.846 3.847-3.846 8.463v455.382q0 4.616 3.846 8.463 3.847 3.846 8.463 3.846ZM160-320V-800v480Z"
+                              /></svg
+                            ><span>05</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+                <article>
+                  <div class="post-card horizontal-card img-hover-move">
+                    <div class="post-thumb media">
+                      <a href="single.html">
+                        <img src="/assets/img/post-3.jpg" alt="thumb" />
+                      </a>
+                    </div>
+                    <div class="post-content">
+                      <ul class="post-meta">
+                        <li><a href="category.html">Lifestyle</a></li>
+                        <li class="sep"></li>
+                        <li>
+                          <a href="category.html" class="date">08.02.2024</a>
+                        </li>
+                      </ul>
+                      <h3>
+                        <a href="single.html" class="text-hover"
+                          >French migration row engulfs island</a
+                        >
+                      </h3>
+                      <ul class="post-card-footer">
+                        <li>
+                          <a href="single.html" class="read-more"
+                            >Continue Reading</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="comment"
+                            ><svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              height="24"
+                              viewBox="0 -960 960 960"
+                              width="24"
+                              fill="currentColor"
+                            >
+                              <path
+                                d="M250.001-410.001h459.998v-59.998H250.001v59.998Zm0-120h459.998v-59.998H250.001v59.998Zm0-120h459.998v-59.998H250.001v59.998Zm609.998 531.537L718.461-260.001H172.309q-30.308 0-51.308-21t-21-51.308v-455.382q0-30.308 21-51.308t51.308-21h615.382q30.308 0 51.308 21t21 51.308v669.227ZM172.309-320h571.69L800-264.615v-523.076q0-4.616-3.846-8.463-3.847-3.846-8.463-3.846H172.309q-4.616 0-8.463 3.846-3.846 3.847-3.846 8.463v455.382q0 4.616 3.846 8.463 3.847 3.846 8.463 3.846ZM160-320V-800v480Z"
+                              /></svg
+                            ><span>04</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+                <article>
+                  <div class="post-card horizontal-card img-hover-move">
+                    <div class="post-thumb media">
+                      <a href="single.html">
+                        <img src="/assets/img/post-4.jpg" alt="thumb" />
+                      </a>
+                    </div>
+                    <div class="post-content">
+                      <ul class="post-meta">
+                        <li><a href="category.html">Fashion</a></li>
+                        <li class="sep"></li>
+                        <li>
+                          <a href="category.html" class="date">05.03.2024</a>
+                        </li>
+                      </ul>
+                      <h3>
+                        <a href="single.html" class="text-hover"
+                          >SpaceX blasts private company lander</a
+                        >
+                      </h3>
+                      <ul class="post-card-footer">
+                        <li>
+                          <a href="single.html" class="read-more"
+                            >Continue Reading</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="comment">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              height="24"
+                              viewBox="0 -960 960 960"
+                              width="24"
+                              fill="currentColor"
+                            >
+                              <path
+                                d="M250.001-410.001h459.998v-59.998H250.001v59.998Zm0-120h459.998v-59.998H250.001v59.998Zm0-120h459.998v-59.998H250.001v59.998Zm609.998 531.537L718.461-260.001H172.309q-30.308 0-51.308-21t-21-51.308v-455.382q0-30.308 21-51.308t51.308-21h615.382q30.308 0 51.308 21t21 51.308v669.227ZM172.309-320h571.69L800-264.615v-523.076q0-4.616-3.846-8.463-3.847-3.846-8.463-3.846H172.309q-4.616 0-8.463 3.846-3.846 3.847-3.846 8.463v455.382q0 4.616 3.846 8.463 3.847 3.846 8.463 3.846ZM160-320V-800v480Z"
+                              /></svg
+                            ><span>05</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- TODO: Add comments functionality -->
+            <div class="single-post-item">
+              <h3>Post Comments</h3>
+              <ul class="comments-box">
+                <li class="comment">
+                  <div class="comment-inner">
+                    <div class="comment-thumb">
+                      <img src="/assets/img/author-1.jpg" alt="img" />
+                    </div>
+                    <div class="comment-wrap">
+                      <div class="comments-meta">
+                        <h4>Félix Lengyel <span>01.01.2024 at 8:00</span></h4>
+                      </div>
+                      <div class="comment-area">
+                        <p>
+                          You guys have put so much work, effort, and time while
+                          designing this awesome theme I can see that passion
+                          when I incorporated it into my website.
+                        </p>
+                        <a href="#" class="reply">Reply</a>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="children">
+                    <li class="comment">
+                      <div class="comment-inner">
+                        <div class="comment-thumb">
+                          <img src="/assets/img/author-2.jpg" alt="img" />
+                        </div>
+                        <div class="comment-wrap">
+                          <div class="comments-meta">
+                            <h4>
+                              Joseph Crawford <span>01.01.2024 at 8:00</span>
+                            </h4>
+                          </div>
+                          <div class="comment-area">
+                            <p>
+                              The only thing I LOVE more than this theme and
+                              it’s incredible options is the support team! They
+                              are freaking amazable!
+                            </p>
+                            <a href="#" class="reply">Reply</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="comment">
+                  <div class="comment-inner">
+                    <div class="comment-thumb">
+                      <img src="/assets/img/author-3.jpg" alt="img" />
+                    </div>
+                    <div class="comment-wrap">
+                      <div class="comments-meta">
+                        <h4>Patsy Hamlin <span>01.01.2024 at 8:00</span></h4>
+                      </div>
+                      <div class="comment-area">
+                        <p>
+                          Outstanding quality in this theme, brilliant Effects
+                          and perfect crafted Code. We absolutely love it and
+                          can highly recommend DynamicLayers!
+                        </p>
+                        <a href="#" class="reply">Reply</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="comment-form-wrap">
+                <h3>Leave a Reply</h3>
+                <form
+                  action="#"
+                  method="post"
+                  class="comment-form form-horizontal"
+                >
+                  <div class="comment-form-group">
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="form-control"
+                        placeholder="Name*"
+                        required=""
+                      />
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="Email*"
+                        required=""
+                      />
+                    </div>
+                    <div class="form-field message">
+                      <textarea
+                        id="comment"
+                        name="comment"
+                        cols="30"
+                        rows="5"
+                        class="form-control comment"
+                        placeholder="Your Comment*"
+                        required=""
+                      ></textarea>
+                    </div>
+                    <div class="form-field submit-btn">
+                      <button
+                        id="submit"
+                        class="default-btn text-anim"
+                        type="submit"
+                        data-text="Submit Comment"
+                      >
+                        Submit Comment
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!--/.post-comments-->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--/.single-page-->
+
+    <!-- TODO: Add ejs includes -->
+    <%- include('includes/footer') %>
+    <!--/.footer-section-->
+
+    <!-- TODO: Add ejs includes -->
+    <%- include('includes/scrollup') %>
+    <!--scrollup-->
+
+    <!-- TODO: Add ejs includes  -->
+    <%- include('includes/toggle-theme') %>
+    <!-- Switch Button -->
+
+    <!-- TODO: Add ejs includes  -->
+    <!--jQuery Lib-->
+    <%- include('includes/scripts') %>
+  </body>
+</html>

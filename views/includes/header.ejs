@@ -1,0 +1,13 @@
+<header>
+    <h1>
+      <a href="/" style="text-decoration: none; color: white">e28886.tech</a>
+    </h1>
+    <nav>
+      <% if (user) { %>
+      <a href="create-paper"><button>Publish Paper</button></a>
+      <a href="logout"><button>Logout</button></a>
+      <% } else { %>
+      <a href="login"><button>Login</button></a>
+      <% } %>
+    </nav>
+  </header>

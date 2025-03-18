@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head') %>
+  <body>
+    <%- include('includes/header') %>
+
+    <main>
+      <h1>Welcome <mark><%= user.username %></mark>, to your dashboard.</h1>
+      <% if(papers.length === 0){ %>
+      <p>You do not have any published research papers.</p>
+      <% } else { %>
+      <p>Here are all your recent research papers.</p>
+      <% }%>
+
+      <ul>
+        <% papers.forEach(paper => { %>
+        <li>
+          <a href="/paper/<%= paper.id %>"
+            ><%= paper.title %> on <%= new Date(paper.createdDate).getDate()
+            %>&#8725;<%= new Date(paper.createdDate).toLocaleString('default', {
+            month: 'long' }); %>&#8725;<%= new
+            Date(paper.createdDate).getFullYear() %></a
+          >
+        </li>
+        <% }) %>
+      </ul>
+    </main>
+
+    <%- include('includes/footer') %>
+  </body>
+</html>
